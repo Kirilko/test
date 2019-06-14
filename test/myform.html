@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style>
+		.form-width {
+			max-width: 25rem;
+		}
+		.float-label label {
+		 	position: absolute;
+			 cursor: text;
+			 font-size: 90%;	 
+			 -webkit-transition: all .2s;
+			 transition: all .2s;
+			 top: -0.95em;
+			 line-height: 1;
+			 padding: 0 10px;
+		}
+		.float-label .form-control::-webkit-input-placeholder {
+			 opacity: 1;
+			 -webkit-transition: all .2s;
+			 transition: all .2s; 
+		}
+		 .float-label .form-control:placeholder-shown:not(:focus)::-webkit-input-placeholder {
+			 opacity: 0;
+		}
+		 .float-label .form-control:placeholder-shown:not(:focus) + label {
+			 font-size: 150%;
+		 	opacity: .5;
+		 	top: .3em;
+ 		}
+ 		hr{
+			border-top: 2px solid silver;
+			margin-top:0.3em;
+		}
+		#checl{
+			transform:scale(1.5);
+		}
+	</style>
+</head>
+<body>
+	<div class="container p-5">
+		<form class="card bg-light form-width">
+			<h4 class="text-center">Регистрация</h4>
+			<hr>
+			<div class="row">
+				<div class="input-group form-group float-label">	
+					<div class="col-md-5 offset-1">
+						<input type="text" id="name" class="form-control" placeholder="Имя">
+						<label for="name">Имя</label>
+					</div>
+					<div class="col-md-5">		
+						<input type="text" id="surname" class="form-control" placeholder="Фамилия">
+						<label for="surname">Фамилия</label>
+					</div>
+				</div>
+				<div class="input-group form-group float-label">
+					<div class="col-md-10 offset-1">
+						<input type="email" id="email" class="form-control" placeholder="user@example.com">
+						<label for="email">Email</label>
+					</div>
+				</div>
+				<div class="input-group form-group float-label">
+					<div class="col-md-10 offset-1">
+						<input type="password" id="pass" class="form-control" placeholder="********">
+						<label for="pass">Пароль</label>
+					</div>
+				</div>
+				<div class="input-group form-group  float-label">
+					<div class="col-md-10 offset-1">
+							<input type="password" id="r-pass" class="form-control" placeholder="********">
+							<label for="r-pass">Пароль повторно</label>
+					</div>
+				</div>
+				<div class="input-group form-group">
+					<div class="col-md-10 offset-1 float-label">
+						<select class="form-control custom-select" id="country">
+						 	<option selected>Россия</option>
+						 	<option>Казахстан</option>
+						 	<option>Белоруссия</option>
+						 	<option>Украина</option>
+			 			</select>
+		 				<label for="country">Страна</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col offset-3">
+						<input type="checkbox" class="checkbox" id="check">
+						<label for="check">Получать новости</label>
+					</div>
+				</div>
+				<div class="text-cennter col-md-10 offset-1 form-group">
+					<button type="submit" class="btn btn-block btn-primary">Зарегистрироваться</button>
+				</div>
+			</div>
+			
+		</form>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="
+	sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>	
+</body>
+</html>
