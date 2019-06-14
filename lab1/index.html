@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>  
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Очень важный сайт</title>
+	  <style>
+	  h2{
+	  color: hotpink;
+	  background-color: white;
+	  text-decoration: underline;
+	  }
+	  body
+	  {background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/LogoMospolytech.jpg/250px-LogoMospolytech.jpg)}
+	  ol{background-color: white}
+	  li{background-color: white }
+	  img{
+display: block;
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #666666;}
+
+  big{font-size: 20pt}
+	  </style>
+   </head>
+   <body>
+      
+	  <br><br>
+	  <h2 style="display:block; width:250px">Как варить гречку</h2>
+	  <ol style="display:block; width:175px">
+	  <strong>
+	  <li>Вскипятить воду</li>
+	  <li>Закинуть крупу</li>
+	  <li>Подождать 15-20 минут</li>
+	  <li>Достать гречку</li>
+	  </strong>
+	  </ol>
+	  <a href="греча.jpeg"><strong><big>ссылка</big></strong></a><br>
+	  <p >
+<a href="DSC_0076.png" style="display:block; width:20px"><img  src="DSC_0076.png"></a> 
+
+<t id="blinking" style="color:hotpink">OMG<sup>&copy;</sup></t>
+      </p>
+	  <script>
+      var p = document.getElementById("blinking");
+      setInterval(function() {
+        if (p.style.fontSize != '100px') {
+          p.style.fontSize = '100px';
+        } else {
+          p.style.fontSize = '150px';
+        }
+      }, 500);
+    </script>
+   </body>
+</html> 
