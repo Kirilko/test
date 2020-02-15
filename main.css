@@ -1,0 +1,17 @@
+.div_flow{
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.td_hover:hover{
+    background-color:#F5F5F5;
+    cursor: pointer;
+}
+
+.table{
+    margin:0;
+}
+
+tr{
+    height: 100px !important; 
+}
