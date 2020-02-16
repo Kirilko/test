@@ -31,11 +31,17 @@
     <div class="d-flex">
         <table class="table table-bordered">
             <thead class="thead">
-                <tr><th scope="col">ФИО</th></tr>
+                <tr>
+                    <th scope="col">ФИО</th>
+                </tr>
             </thead>
             <tbody class="tbody">
-                <tr><th scope="row">ssssssssssssssssssssssssssss sssssssssssssssssssssssss ssssssssssssssssssssssss</th></tr>
-                <tr><th scope="row">s</th></tr>
+                <tr>
+                    <th scope="row">ssssssssssssssssssssssssssss sssssssssssssssssssssssss ssssssssssssssssssssssss</th>
+                </tr>
+                <tr>
+                    <th scope="row">s</th>
+                </tr>
             </tbody>
         </table>
         <div class="div_flow">
@@ -50,10 +56,10 @@
                         <th scope="col" colspan="7">СБ</th>
                     </tr>
                 </thead>
-                
+
                 <tbody class="tbody">
                     <tr>
-                        <td class="td_hover">9:00-10:30</td>
+                        <td class="td_hover" onclick="temp()">9:00-10:30</td>
                         <td class="td_hover">10:40-12:10</td>
                         <td class="td_hover">12:20-13:50</td>
                         <td class="td_hover">14:30-16:00</td>
@@ -63,7 +69,7 @@
                         <td class="td_hover">9:00-10:30</td>
                         <td class="td_hover">10:40-12:10</td>
                         <td class="td_hover">12:20-13:50</td>
-                        <td class="td_hover">14:30-16:00</td>
+                        <td class="td_hover" onclick="temp()">14:30-16:00</td>
                         <td class="td_hover">16:10-17:40</td>
                         <td class="td_hover">17:50-19:20</td>
                         <td class="td_hover">19:30-21:00</td>
@@ -144,6 +150,24 @@
             </table>
         </div>
     </div>
+    <script>
+        tmp = 0;
+        function temp() {
+            var div = document.createElement('div');
+            x = event.clientX;
+            y = event.clientY;
+            
+            div.style.position = 'absolute';
+            div.style.left = x + 'px';   // Координаты дива X и Y не забываем указать еденицы измерения,
+            div.style.top = y + 'px';    // например 40px или 20%
+            div.style.background = 'red';   //  Див с красной заливкой ))
+            div.appendChild(document.createTextNode('Я обычный текст'));  //  Добавим текст в див
+            document.body.appendChild(div);
+            tmp = 1;
+        }
+  
+
+    </script>
     <footer class="footer fixed-bottom py-3 text-white bg-dark">
         <div class="container text-center">
             <b> pd &copy; 181-351</small>

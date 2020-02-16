@@ -12,6 +12,6 @@
     margin:0;
 }
 
-tr{
+tbody>tr{
     height: 100px !important; 
 }
