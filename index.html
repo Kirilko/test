@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="main.css">
 </head>
 
-<body>
+<body onclick="">
     <nav class="navbar navbar-dark sticky-top navbar-expand-md bg-dark">
         <a href="/" class="navbar-brand">
             <h5>Logo</h5>
@@ -59,7 +59,7 @@
 
                 <tbody class="tbody">
                     <tr>
-                        <td class="td_hover" onclick="temp()">9:00-10:30</td>
+                        <td class="td_hover">9:00-10:30</td>
                         <td class="td_hover">10:40-12:10</td>
                         <td class="td_hover">12:20-13:50</td>
                         <td class="td_hover">14:30-16:00</td>
@@ -69,7 +69,7 @@
                         <td class="td_hover">9:00-10:30</td>
                         <td class="td_hover">10:40-12:10</td>
                         <td class="td_hover">12:20-13:50</td>
-                        <td class="td_hover" onclick="temp()">14:30-16:00</td>
+                        <td class="td_hover">14:30-16:00</td>
                         <td class="td_hover">16:10-17:40</td>
                         <td class="td_hover">17:50-19:20</td>
                         <td class="td_hover">19:30-21:00</td>
@@ -151,22 +151,28 @@
         </div>
     </div>
     <script>
-        tmp = 0;
-        function temp() {
-            var div = document.createElement('div');
-            x = event.clientX;
-            y = event.clientY;
+        var div = document.createElement('div');
+        div.appendChild(document.createTextNode('Я обычный текст'));
+        div.style.position = 'absolute';
+        div.style.background = 'red';
+        window.onload = function s() {
+            var link = document.getElementsByClassName('td_hover'), tlink = link.length;
+            while (tlink--) {
+                link[tlink].addEventListener('click', temp);
+            }
             
-            div.style.position = 'absolute';
-            div.style.left = x + 'px';   // Координаты дива X и Y не забываем указать еденицы измерения,
-            div.style.top = y + 'px';    // например 40px или 20%
-            div.style.background = 'red';   //  Див с красной заливкой ))
-            div.appendChild(document.createTextNode('Я обычный текст'));  //  Добавим текст в див
-            document.body.appendChild(div);
-            tmp = 1;
         }
-  
-
+        function temp(e) {
+            div.style.left = e.clientX + 'px';
+            div.style.top = e.clientY + 'px';
+            document.body.appendChild(div);
+            function deleteDiv() {
+                document.body.removeChild(div);
+                e.target.removeEventListener('click', deleteDiv);
+                document.body.appendChild(div);
+            }
+            e.target.addEventListener('click', deleteDiv);
+        }
     </script>
     <footer class="footer fixed-bottom py-3 text-white bg-dark">
         <div class="container text-center">
