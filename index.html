@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
+    <script src="vue.js"></script>
 </head>
 
 <body onclick="">
@@ -40,7 +41,7 @@
                     <th scope="row">ssssssssssssssssssssssssssss sssssssssssssssssssssssss ssssssssssssssssssssssss</th>
                 </tr>
                 <tr>
-                    <th scope="row">s</th>
+                    <th scope="row" id="app">{{ message }}</th>
                 </tr>
             </tbody>
         </table>
@@ -150,33 +151,42 @@
             </table>
         </div>
     </div>
+    <button class="close" id='btn-close'><span>×</span></button>
     <script>
-        var div = document.createElement('div');
-        div.appendChild(document.createTextNode('Я обычный текст'));
-        div.style.position = 'absolute';
-        div.style.background = 'red';
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Петро'
+            }
+        });
+        var card = document.createElement('div'), header = document.createElement('div'), body = document.createElement('div');
+        card.style.position = 'absolute';
+        card.className = 'card';
+        header.className = 'card-header';
+        body.className = 'card-body';
+        var btn = document.getElementById('btn-close');
+        btn.addEventListener('click', remove);
+        header.appendChild(btn);
+        card.appendChild(header);
+        card.appendChild(body);
         window.onload = function s() {
             var link = document.getElementsByClassName('td_hover'), tlink = link.length;
             while (tlink--) {
                 link[tlink].addEventListener('click', temp);
             }
-            
         }
         function temp(e) {
-            div.style.left = e.clientX + 'px';
-            div.style.top = e.clientY + 'px';
-            document.body.appendChild(div);
-            function deleteDiv() {
-                document.body.removeChild(div);
-                e.target.removeEventListener('click', deleteDiv);
-                document.body.appendChild(div);
-            }
-            e.target.addEventListener('click', deleteDiv);
+            card.style.left = e.clientX - card.offsetWidth + 'px';
+            card.style.top = e.clientY + 'px';
+            document.body.appendChild(card);
+        }
+        function remove() {
+            document.body.removeChild(card);
         }
     </script>
     <footer class="footer fixed-bottom py-3 text-white bg-dark">
         <div class="container text-center">
-            <b> pd &copy; 181-351</small>
+            <b>pd &copy; 181-351</b>
         </div>
     </footer>
 </body>
