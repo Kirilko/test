@@ -13,5 +13,9 @@
 }
 
 tbody>tr{
-    height: 100px !important; 
+    height: 190px !important; 
 }
+.temp{
+    width:100px;
+}
+
