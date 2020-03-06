@@ -10,12 +10,15 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
     <script src="vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body onclick="">
     <nav class="navbar navbar-dark sticky-top navbar-expand-md bg-dark">
         <a href="/" class="navbar-brand">
-            <h5>Logo</h5>
+            <h5>
+                <p><span id='text'>ss</span></p>
+            </h5>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
             <span class="navbar-toggler-icon"></span>
@@ -29,7 +32,7 @@
             </ul>
         </div>
     </nav>
-    <div class="d-flex">
+    <div class="d-flex" id="table">
         <table class="table table-bordered">
             <thead class="thead">
                 <tr>
@@ -37,11 +40,8 @@
                 </tr>
             </thead>
             <tbody class="tbody">
-                <tr>
-                    <th scope="row">ssssssssssssssssssssssssssss sssssssssssssssssssssssss ssssssssssssssssssssssss</th>
-                </tr>
-                <tr>
-                    <th scope="row" id="app">{{ message }}</th>
+                <tr v-for="name in names">
+                    <th scope="row">{{ name }}</th>
                 </tr>
             </tbody>
         </table>
@@ -57,138 +57,181 @@
                         <th scope="col" colspan="7">СБ</th>
                     </tr>
                 </thead>
-
                 <tbody class="tbody">
-                    <tr>
-                        <td class="td_hover">9:00-10:30</td>
-                        <td class="td_hover">10:40-12:10</td>
-                        <td class="td_hover">12:20-13:50</td>
-                        <td class="td_hover">14:30-16:00</td>
-                        <td class="td_hover">16:10-17:40</td>
-                        <td class="td_hover">17:50-19:20</td>
-                        <td class="td_hover">19:30-21:00</td>
-                        <td class="td_hover">9:00-10:30</td>
-                        <td class="td_hover">10:40-12:10</td>
-                        <td class="td_hover">12:20-13:50</td>
-                        <td class="td_hover">14:30-16:00</td>
-                        <td class="td_hover">16:10-17:40</td>
-                        <td class="td_hover">17:50-19:20</td>
-                        <td class="td_hover">19:30-21:00</td>
-                        <td class="td_hover">9:00-10:30</td>
-                        <td class="td_hover">10:40-12:10</td>
-                        <td class="td_hover">12:20-13:50</td>
-                        <td class="td_hover">14:30-16:00</td>
-                        <td class="td_hover">16:10-17:40</td>
-                        <td class="td_hover">17:50-19:20</td>
-                        <td class="td_hover">19:30-21:00</td>
-                        <td class="td_hover">9:00-10:30</td>
-                        <td class="td_hover">10:40-12:10</td>
-                        <td class="td_hover">12:20-13:50</td>
-                        <td class="td_hover">14:30-16:00</td>
-                        <td class="td_hover">16:10-17:40</td>
-                        <td class="td_hover">17:50-19:20</td>
-                        <td class="td_hover">19:30-21:00</td>
-                        <td class="td_hover">9:00-10:30</td>
-                        <td class="td_hover">10:40-12:10</td>
-                        <td class="td_hover">12:20-13:50</td>
-                        <td class="td_hover">14:30-16:00</td>
-                        <td class="td_hover">16:10-17:40</td>
-                        <td class="td_hover">17:50-19:20</td>
-                        <td class="td_hover">19:30-21:00</td>
-                        <td class="td_hover">9:00-10:30</td>
-                        <td class="td_hover">10:40-12:10</td>
-                        <td class="td_hover">12:20-13:50</td>
-                        <td class="td_hover">14:30-16:00</td>
-                        <td class="td_hover">16:10-17:40</td>
-                        <td class="td_hover">17:50-19:20</td>
-                        <td class="td_hover">19:30-21:00</td>
-                    </tr>
-                    <tr>
-                        <td class="td_hover">9:00-10:30</td>
-                        <td class="td_hover">10:40-12:10</td>
-                        <td class="td_hover">12:20-13:50</td>
-                        <td class="td_hover">14:30-16:00</td>
-                        <td class="td_hover">16:10-17:40</td>
-                        <td class="td_hover">17:50-19:20</td>
-                        <td class="td_hover">19:30-21:00</td>
-                        <td class="td_hover">9:00-10:30</td>
-                        <td class="td_hover">10:40-12:10</td>
-                        <td class="td_hover">12:20-13:50</td>
-                        <td class="td_hover">14:30-16:00</td>
-                        <td class="td_hover">16:10-17:40</td>
-                        <td class="td_hover">17:50-19:20</td>
-                        <td class="td_hover">19:30-21:00</td>
-                        <td class="td_hover">9:00-10:30</td>
-                        <td class="td_hover">10:40-12:10</td>
-                        <td class="td_hover">12:20-13:50</td>
-                        <td class="td_hover">14:30-16:00</td>
-                        <td class="td_hover">16:10-17:40</td>
-                        <td class="td_hover">17:50-19:20</td>
-                        <td class="td_hover">19:30-21:00</td>
-                        <td class="td_hover">9:00-10:30</td>
-                        <td class="td_hover">10:40-12:10</td>
-                        <td class="td_hover">12:20-13:50</td>
-                        <td class="td_hover">14:30-16:00</td>
-                        <td class="td_hover">16:10-17:40</td>
-                        <td class="td_hover">17:50-19:20</td>
-                        <td class="td_hover">19:30-21:00</td>
-                        <td class="td_hover">9:00-10:30</td>
-                        <td class="td_hover">10:40-12:10</td>
-                        <td class="td_hover">12:20-13:50</td>
-                        <td class="td_hover">14:30-16:00</td>
-                        <td class="td_hover">16:10-17:40</td>
-                        <td class="td_hover">17:50-19:20</td>
-                        <td class="td_hover">19:30-21:00</td>
-                        <td class="td_hover">9:00-10:30</td>
-                        <td class="td_hover">10:40-12:10</td>
-                        <td class="td_hover">12:20-13:50</td>
-                        <td class="td_hover">14:30-16:00</td>
-                        <td class="td_hover">16:10-17:40</td>
-                        <td class="td_hover">17:50-19:20</td>
-                        <td class="td_hover">19:30-21:00</td>
+                    <tr v-for="name in names">
+                        <td v-for="time in times" class="td_hover">
+                            <p id='time'>{{time}}</p>
+                            <p id="group"></p>
+                            <p id='discipline'></p>
+                            <p id='room'></p>
+                        </td>
+                        <td v-for="time in times" class="td_hover">
+                            <p id='time'>{{time}}</p>
+                            <p id='group'></p>
+                            <p id='discipline'></p>
+                            <p id='room'></p>
+                        </td>
+                        <td v-for="time in times" class="td_hover">
+                            <p id='time'>{{time}}</p>
+                            <p id='group'></p>
+                            <p id='discipline'></p>
+                            <p id='room'></p>
+                        </td>
+                        <td v-for="time in times" class="td_hover">
+                            <p id='time'>{{time}}</p>
+                            <p id='group'></p>
+                            <p id='discipline'></p>
+                            <p id='room'></p>
+                        </td>
+                        <td v-for="time in times" class="td_hover">
+                            <p id='time'>{{time}}</p>
+                            <p id='group'></p>
+                            <p id='discipline'></p>
+                            <p id='room'></p>
+                        </td>
+                        <td v-for="time in times" class="td_hover">
+                            <p id='time'>{{time}}</p>
+                            <p id='group'></p>
+                            <p id='discipline'></p>
+                            <p id='room'></p>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-    <button class="close" id='btn-close'><span>×</span></button>
-    <script>
-        var app = new Vue({
-            el: '#app',
-            data: {
-                message: 'Петро'
-            }
-        });
-        var card = document.createElement('div'), header = document.createElement('div'), body = document.createElement('div');
-        card.style.position = 'absolute';
-        card.className = 'card';
-        header.className = 'card-header';
-        body.className = 'card-body';
-        var btn = document.getElementById('btn-close');
-        btn.addEventListener('click', remove);
-        header.appendChild(btn);
-        card.appendChild(header);
-        card.appendChild(body);
-        window.onload = function s() {
-            var link = document.getElementsByClassName('td_hover'), tlink = link.length;
-            while (tlink--) {
-                link[tlink].addEventListener('click', temp);
-            }
-        }
-        function temp(e) {
-            card.style.left = e.clientX - card.offsetWidth + 'px';
-            card.style.top = e.clientY + 'px';
-            document.body.appendChild(card);
-        }
-        function remove() {
-            document.body.removeChild(card);
-        }
-    </script>
+
+    <div class="card" id="input-card" v-if="seen" style="position: absolute;"
+        :style="{left: left + 'px', top: top + 'px' }">
+        <div class="card-header">
+            <button class="close" id="btn-close" @click="remove"><span>×</span></button>
+        </div>
+        <div class="card-body">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text temp" for="opt-group"> Группа </label>
+                </div>
+                <select class="custom-select" id="opt-group">
+                    <option v-for="group in groups">{{ group }}</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text temp" for="opt-lesson">Предмет</label>
+                </div>
+                <select class="custom-select" id="opt-lesson">
+                    <option v-for="lesson in lessons">{{ lesson }}</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text temp" for="opt-room">Аудитория</label>
+                </div>
+                <select class="custom-select" id="opt-room">
+                    <option v-for="room in rooms">{{ room }}</option>
+                </select>
+            </div>
+            <button class="btn btn-block btn-primary" @click="submit">Submit</button>
+        </div>
+    </div>
+    <div class="div" id="json">
+        <ul>
+            <li v-for="name in names"> {{ name.id }}: {{ name.first_name }}</li>
+        </ul>
+    </div>
     <footer class="footer fixed-bottom py-3 text-white bg-dark">
         <div class="container text-center">
             <b>pd &copy; 181-351</b>
         </div>
     </footer>
+    <script>
+        var link;
+        window.onload = function s() {
+            link = document.getElementsByClassName('td_hover'), tlink = link.length;
+            while (tlink--) {
+                link[tlink].addEventListener('click', app.create);
+                link[tlink].addEventListener('click', app.take(tlink));
+            }
+        }
+        var app = new Vue({
+            el: '#input-card',
+            data: {
+                width: document.getElementById('input-card').offsetWidth,
+                seen: false,
+                left: 0,
+                top: 0,
+                groups: ['181-351', '181-352'],
+                lessons: ['Математика', 'Русский язык'],
+                rooms: ['АВ1010', 'Н315'],
+                tlink: 0
+            },
+            methods: {
+                create(event) {
+                    this.left = event.clientX - this.width;
+                    this.top = event.clientY;
+                    this.seen = true;
+                },
+                remove() {
+                    this.seen = false
+                },
+                take(s) {
+                    tlink = s;
+                },
+                submit() {
+                    table.group = document.getElementById('opt-group').value;
+                    table.lesson = document.getElementById('opt-lesson').value;
+                    table.room = document.getElementById('opt-room').value;
+                    var temp = link[this.tlink].getElementsByTagName('p');
+                    temp[1].innerHTML = table.group;
+                    temp[2].innerHTML = table.lesson;
+                    temp[3].innerHTML = table.room;
+                }
+            }
+        });
+        var table = new Vue({
+            el: '#table',
+            data: {
+                names: ['Петро', 'Не Петро'],
+                times: ['9:00-10:30', '10:40-12:10', '12:20-13:50', '14:30-16:00', '16:10-17:40', '17:50-19:20', '19:30-21:00'],
+                group: '',
+                lesson: '',
+                room: ''
+            },
+        });
+        var json = new Vue({
+            el: '#json',
+            data: {
+                names: [
+                    {
+                        "id": "1",
+                        "first_name": "Иван",
+                        "last_name": "Иванов",
+                        "middle_name": "Иванович"
+                    },
+                    {
+                        "id": "2",
+                        "first_name": "Петро",
+                        "last_name": "Иванов",
+                        "middle_name": "Иванович"
+                    }, {
+                        "id": "3",
+                        "first_name": "Не петро",
+                        "last_name": "Иванов",
+                        "middle_name": "Иванович"
+                    }
+                ],
+                names_str: '[{\"id\":\"1\",\"first_name\":\"Иван\",\"last_name\":\"Иванов\",\"middle_name\":\"Иванович\"}]',
+            },
+            methods: {
+                getNames() {
+                    /*axios.get('names.json').then((Response) => {
+                        console.log(response.data);
+                        this.names = Response.data;
+                });*/
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
